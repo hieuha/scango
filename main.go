@@ -93,11 +93,13 @@ func main() {
 	defer coreLogFile.Close()
 
 	// Init redis server
-	rclient = redis.NewClient(&redis.Options{
-		Addr:     "127.0.0.1",
-		Password: "",
-		DB:       0,
-	})
+	if logRedis {
+		rclient = redis.NewClient(&redis.Options{
+			Addr:     Config.Rediserver,
+			Password: Config.Redisauth,
+			DB:       Config.Redisdb,
+		})
+	}
 
 	hosts, _ := Hosts(rangeIP)
 	totalHosts := len(hosts)
