@@ -1,0 +1,10 @@
+version = "1.0.0"
+timeout = 2
+corelog = "./core.log"
+concurrentmax = 200
+loglevel = 1
+
+# Redis server
+rediserver = "127.0.0.1:6379"
+redisauth = "deptraivair"
+redisdb = 0
