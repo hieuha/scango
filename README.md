@@ -1,5 +1,8 @@
 # scango
 ```
+GOARCH=amd64 GOOS=linux go build
+```
+```
 Usage of ./scango:
   -config string
         location of the config file (default "./config.toml")
