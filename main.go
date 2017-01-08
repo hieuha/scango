@@ -68,6 +68,12 @@ func ping(pingChan <-chan string, timeOut int) {
 			if Config.LogLevel > 0 {
 				log.Printf("NTP Server:  %s\n", fmt.Sprintf(" %s len %d", ip, totalByteReceived))
 			}
+			if logRedis {
+				time_now := time.Now().UnixNano()
+				if rclient != nil {
+					rclient.LSet("NTP_SERVER", time_now, ip)
+				}
+			}
 		}
 	}
 }
