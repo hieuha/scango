@@ -1,7 +1,7 @@
 version = "1.0.0"
 timeout = 2
 corelog = "./core.log"
-concurrentmax = 200
+concurrentmax = 500
 loglevel = 1
 
 # Redis server

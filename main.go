@@ -71,7 +71,7 @@ func ping(pingChan <-chan string, timeOut int) {
 			if logRedis {
 				time_now := time.Now().UnixNano()
 				if rclient != nil {
-					rclient.LSet("NTP_SERVER", time_now, ip)
+					rclient.LPush("NTP_SERVER", time_now, ip)
 				}
 			}
 		}
